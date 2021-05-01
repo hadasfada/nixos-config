@@ -10,23 +10,48 @@
       ./hardware-configuration.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
-  boot.kernelParams = ["nomce" "loglevel=3" # cleaner boot
-  "amdgpu.si_support=1" "radeon.si_support=0" # enable amdgpu support for hainan
-  "module_blacklist=iTCO_wdt" "mitigations=off" # some tweaks to make my potato run cooler
-  ];
- 
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_lqx;
+    kernelParams = ["nomce" "loglevel=3" # cleaner boot
+    "amdgpu.si_support=1" "radeon.si_support=0" # enable amdgpu support for hainan
+    "module_blacklist=iTCO_wdt" "mitigations=off" # some tweaks to make my potato run cooler
+    "i915.fastboot=1" ];
+  };
+
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver 
+        vaapiIntel         
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+	      };
+      };
+    };
+  };
   powerManagement.cpuFreqGovernor = "performance";
 
-  networking.hostName = "nixos"; 
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+    useDHCP = false;
+    interfaces.enp1s0.useDHCP = true;
+    interfaces.wlp2s0.useDHCP = true;
+  };
   time.timeZone = "Europe/Istanbul";
-
-  networking.useDHCP = false;
-  networking.interfaces.enp1s0.useDHCP = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -38,59 +63,70 @@
      keyMap = "trq";
    };
 
-  # X11 and XFCE
-  services.xserver = {
-     enable = true;
-     layout = "tr";
-     wacom.enable = true;
-     libinput.enable = true;
-     displayManager.lightdm.enable = true;
-     desktopManager.xfce.enable = true;
-  };
-  
-  services.xserver.displayManager.sessionCommands = ''
-    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --newmode "1280x720_75.00"   95.75  1280 1360 1488 1696  720 723 728 755 -hsync +vsync
-    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --addmode HDMI-1 "1280x720_75.00"
-    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode "1280x720_75.00"
-  '';
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint ];
-
-  systemd.user.services.mpris-proxy = {
-    Unit.Description = "Mpris proxy";
-    Unit.After = [ "network.target" "sound.target" ];
-    Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-    Install.WantedBy = [ "default.target" ];
-  };
-
-  # Enable sound and pulseaudio
-  #sound.enable = true;
-  #hardware.pulseaudio = {
-  #    enable = true;
-  #    extraModules = [ pkgs.pulseaudio-modules-bt ];
-  #    package = pkgs.pulseaudioFull;
-  #};
-  
-  # Enable sound and pipewire
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Enable bluetooth.
-  hardware.bluetooth = {
-    enable = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-	  };
+# Services
+  services = {
+      xserver = {
+        enable = true;
+        layout = "tr";
+        wacom.enable = true;
+        libinput.enable = true;
+        displayManager.lightdm.enable = true;
+        desktopManager.xfce.enable = true;
+        displayManager.sessionCommands = ''
+        ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --newmode "1280x720_75.00"   95.75  1280 1360 1488 1696  720 723 728 755 -hsync +vsync
+        ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --addmode HDMI-1 "1280x720_75.00"
+        ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode "1280x720_75.00"
+        '';
+        };
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
       };
+      printing = {
+        enable = true;
+        drivers = [pkgs.gutenprint];
+      };
+      flatpak.enable = true;
+      blueman.enable = true;
   };
+  xdg.portal.enable = true;
   
+  fonts = {
+  fonts = with pkgs; [ noto-fonts source-code-pro ];
+  fontconfig = {
+    localConf = ''
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+<match target="font">
+	<edit mode="assign" name="antialias">
+		<bool>true</bool>
+	</edit>
+	<edit mode="assign" name="embeddedbitmap">
+		<bool>false</bool>
+	</edit>
+	<edit mode="assign" name="hinting">
+		<bool>true</bool>
+	</edit>
+	<edit mode="assign" name="hintstyle">
+		<const>hintslight</const>
+	</edit>
+	<edit mode="assign" name="lcdfilter">
+		<const>lcddefault</const>
+	</edit>
+	<edit mode="assign" name="rgba">
+		<const>rgb</const>
+	</edit>
+    </match>
+</fontconfig>
+    '';
+    };
+  };
+
+  security.rtkit.enable = true;
+
   users = {
     #defaultUserShell = pkgs.zsh;
     users.musfay = {
@@ -98,50 +134,49 @@
       extraGroups = [ "wheel" "adbusers" "networkmanager" ]; # Enable ‘sudo’ for the user.
     };
   };
+# ============ packages =================
 
-  programs.bash.shellAliases = {
+  programs = {
+    bash.shellAliases = {
     "calm" = "sudo nixos-rebuild switch";
     "nixconf" = "sudo nvim /etc/nixos/configuration.nix";
     "ls" = "ls --color=tty";
+    "testc" = "gcc test.c -o test ; ./test";
+    "testclang" = "clang test.c -o test ; ./test";
+    };
+
+    zsh = {
+      enable = true;
+    };  
+    nm-applet.enable = true;  
+    adb.enable = true;  
   };
 
-  programs.zsh.enable = true;
-  programs.zsh.ohMyZsh = {
-    enable = true;
-    plugins = [ "git"];
-  };
 # hardware acceleration  
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver 
-      vaapiIntel         
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
-# ============ packages =================
-  programs.adb.enable = true;
+    
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # languages
     gcc
     python39Full
     micropython
-    pkgsCross.avr.buildPackages.gcc
     go
     rustc
+    nodejs-16_x
+    clang_12
     # editors
     neovim
     vscodium
     arduino
     # multimedia
     vlc
+    kodi
+    pulseeffects-pw
     # version control
-    git
+    gitFull
     gh
     # emulation
     wineStaging
@@ -149,29 +184,33 @@
     matcha-gtk-theme
     papirus-icon-theme
     # browsers
-    chromium
+    ungoogled-chromium
+    brave
     # games
-    steam
     multimc
+    minecraft
+    steam
+    osu-lazer
     # chat
     tdesktop
     discord
     zoom-us
     # misc
+    libreoffice-fresh
     xfce.xfce4-whiskermenu-plugin
     pavucontrol
     xfce.xfce4-pulseaudio-plugin
     # other tools
+    nmap
     xorg.xrandr
+    obs-studio
     neofetch
     fritzing
     evince
     gnome3.simple-scan
     glxinfo
    ];
-  programs.nm-applet.enable = true;
-  services.blueman.enable = true;
-
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

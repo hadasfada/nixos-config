@@ -1,5 +1,5 @@
 DATE=$(date +"%d-%m-%Y %T")
-REPODIR=$HOME/Git/dotfiles-nixos
+REPODIR=$HOME/dotfiles-nixos
 
 function update() {
 	pushd $REPODIR
