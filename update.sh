@@ -15,7 +15,7 @@ function commit() {
 	pushd $REPODIR
 	git pull
 	git add *
-	git commit -m "update $COMMIT_MESSAGE"
+	git commit -m "$COMMIT_MESSAGE"
 	git push
 	popd
 }
