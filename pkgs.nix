@@ -14,6 +14,7 @@
     };
     nm-applet.enable = true;  
     adb.enable = true;  
+    steam.enable = true;
     gnupg.agent.enable = true;
     gnupg.agent.pinentryFlavor = "curses";
   };
@@ -30,7 +31,7 @@
     python39Full              papirus-icon-theme
     micropython               multimc
     go                        minecraft
-    rustc                     steam
+    rustc                     steam-run
     nodejs-16_x               osu-lazer
     clang_12                  discord
     neovim                    tdesktop
@@ -48,7 +49,7 @@
     nmap                      geekbench
     elementary-planner        glxinfo              
     gimp                      krita
-    element-desktop
+    element-desktop      
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
