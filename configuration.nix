@@ -131,23 +131,20 @@
     #defaultUserShell = pkgs.zsh;
     users.musfay = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "adbusers" "networkmanager" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "adbusers" "networkmanager" ];
     };
   };
 # ============ packages =================
+# TODO: clean the configuration and split these section.
+# Other parts also can be splitted.
 
   programs = {
     bash.shellAliases = {
-    "calm" = "sudo nixos-rebuild switch";
+    "rebuild" = "sudo nixos-rebuild switch";
     "nixconf" = "sudo nvim /etc/nixos/configuration.nix";
     "ls" = "ls --color=tty";
-    "testc" = "gcc test.c -o test ; ./test";
-    "testclang" = "clang test.c -o test ; ./test";
     };
 
-    zsh = {
-      enable = true;
-    };  
     nm-applet.enable = true;  
     adb.enable = true;  
   };
@@ -159,83 +156,16 @@
     
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    # languages
-    gcc
-    python39Full
-    micropython
-    go
-    rustc
-    nodejs-16_x
-    clang_12
-    # editors
-    neovim
-    vscodium
-    arduino
-    # multimedia
-    vlc
-    kodi
-    pulseeffects-pw
-    # version control
-    gitFull
-    gh
-    # emulation
-    wineStaging
-    # themes
-    matcha-gtk-theme
-    papirus-icon-theme
-    # browsers
-    ungoogled-chromium
-    brave
-    # games
-    multimc
-    minecraft
-    steam
-    osu-lazer
-    # chat
-    tdesktop
-    discord
-    zoom-us
-    # misc
-    libreoffice-fresh
-    xfce.xfce4-whiskermenu-plugin
-    pavucontrol
-    xfce.xfce4-pulseaudio-plugin
-    # other tools
-    nmap
-    xorg.xrandr
-    obs-studio
-    neofetch
-    fritzing
-    evince
-    gnome3.simple-scan
-    glxinfo
+    gcc python39Full micropython go rustc nodejs-16_x clang_12
+    neovim vscodium arduino vlc pulseeffects-pw gitFull gh clang-tools
+    wineStaging matcha-gtk-theme papirus-icon-theme
+    chromium brave multimc minecraft steam osu-lazer
+    tdesktop discord zoom-us libreoffice-fresh
+    xfce.xfce4-whiskermenu-plugin pavucontrol
+    xfce.xfce4-pulseaudio-plugin nmap openboard
+    gparted xorg.xrandr obs-studio neofetch fritzing evince
+    gnome3.simple-scan glxinfo elementary-planner geekbench
    ];
-  
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "unstable";
 
 }
