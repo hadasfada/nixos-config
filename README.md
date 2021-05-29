@@ -1,4 +1,3 @@
 # dotfiles-nixos
 
-## Installation
-./install.sh
+## Installation ./install.sh
