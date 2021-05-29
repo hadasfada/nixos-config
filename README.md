@@ -1,2 +1,4 @@
 # dotfiles-nixos
-Personal NixOS configuration
+
+## Installation
+./install.sh
