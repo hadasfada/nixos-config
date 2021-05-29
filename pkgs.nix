@@ -15,6 +15,7 @@
     nm-applet.enable = true;  
     adb.enable = true;  
     gnupg.agent.enable = true;
+    gnupg.agent.pinentryFlavor = "curses";
   };
 
 # hardware acceleration  
