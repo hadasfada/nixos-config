@@ -49,7 +49,7 @@
     nmap                      geekbench
     elementary-planner        glxinfo              
     gimp                      krita
-    element-desktop      
+    element-desktop           handbrake
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
