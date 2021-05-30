@@ -17,6 +17,10 @@ function installConfiguration {
 if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-configuration.nix" ]; then	
         INSTALL_PATH=/mnt/etc/nixos
 	installConfiguration
+	# regenerate hardware-config
+	nixos-generate-config --root /mnt
+	nixos-install
+	echo "\n\n      Installation finished!"
 else
 	INSTALL_PATH=/etc/nixos
 	installConfiguration 
