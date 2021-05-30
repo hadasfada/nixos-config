@@ -1,25 +1,28 @@
 #!/usr/bin/env bash
 
 REPODIR=$HOME/dotfiles-nixos
-COMMIT_MESSAGE=$1
+INPUT=$1
+
+if [ -n "$INPUT" ]; then
+	COMMIT_MESSAGE="$INPUT"
+else
+	COMMIT_MESSAGE="update"
+fi
 
 function update() {
-	pushd $REPODIR
 	rm -f *.nix
 	cp /etc/nixos/* ./
 	rm hardware-configuration.nix
-	popd
 }
 
 function commit() {
-	pushd $REPODIR
 	git pull
 	git add *
 	git commit -m "$COMMIT_MESSAGE"
 	git push
-	popd
 }
 
+pushd $REPODIR
 update
 commit
-
+popd
