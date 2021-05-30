@@ -54,6 +54,12 @@
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
     xfce.xfce4-pulseaudio-plugin   
+   
+    # kodi plugins
+    (kodi.passthru.withPackages (kodiPkgs: with kodiPkgs; [
+      pvr-iptvsimple
+    ]))
+
    ];
   system.stateVersion = "unstable";
 }
