@@ -8,10 +8,8 @@ function backup {
 
 function installConfiguration {
 	backup
-	mv $INSTALL_PATH/hardware-configuration.nix $INSTALL_PATH/hwconf.txt
 	rm $INSTALL_PATH/*nix
-	mv *nix $INSTALL_PATH/
-	mv $INSTALL_PATH hwconf.txt hardware-configuration.nix
+	cp *nix $INSTALL_PATH/
 }
 
 if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-configuration.nix" ]; then	
