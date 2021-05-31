@@ -50,6 +50,7 @@
     elementary-planner        glxinfo              
     gimp                      krita
     element-desktop           handbrake
+    usbutils                  system-config-printer
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
