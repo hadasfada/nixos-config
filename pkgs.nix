@@ -37,10 +37,9 @@
     neovim                    tdesktop
     vscodium                  zoom-us
     arduino                   libreoffice-fresh
-    vlc                       gparted
+    git                       gparted
     pulseeffects-pw           xorg.xrandr
-    gitFull                   obs-studio
-    gh                        neofetch
+    usbutils                  obs-studio
     clang-tools               fritzing
     wineStaging               evince
     chromium                  gnome3.simple-scan
@@ -50,7 +49,9 @@
     elementary-planner        glxinfo              
     gimp                      krita
     element-desktop           handbrake
-    usbutils                  system-config-printer
+    system-config-printer     neofetch
+    gh                        vlc
+    kdeconnect-kde
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
