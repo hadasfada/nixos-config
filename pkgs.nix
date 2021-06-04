@@ -51,7 +51,7 @@
     element-desktop           handbrake
     system-config-printer     neofetch
     gh                        vlc
-    kdeconnect-kde
+    kdeconnect
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
