@@ -9,7 +9,8 @@
       "config-pkgs" = "sudo nvim /etc/nixos/pkgs.nix";
       "config-boot" = "sudo nvim /etc/nixos/boot.nix";
       "config-services" = "sudo nvim /etc/nixos/services.nix";
-      "config-update" = "bash ~/dotfiles-nixos/update.sh";
+      "config-update" = "bash ~/dotfiles-nixos/update";
+      "config-install" = "sudo bash ~/dotfiles-nixos/install";
       "ls" = "ls --color=tty";
     };
     nm-applet.enable = true;  
@@ -45,13 +46,12 @@
     chromium                  gnome3.simple-scan
     pass                      element-desktop
     pavucontrol               openboard
-    nmap                      geekbench
+    nmap                      kdeconnect
     elementary-planner        glxinfo              
     gimp                      krita
     element-desktop           handbrake
     system-config-printer     neofetch
     gh                        vlc
-    kdeconnect
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
