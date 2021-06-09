@@ -8,7 +8,6 @@ function backup {
 
 function installConfiguration {
 	backup
-	rm $INSTALL_PATH/*nix
 	cp *nix $INSTALL_PATH/
 }
 
