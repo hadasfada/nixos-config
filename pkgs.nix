@@ -29,12 +29,11 @@
   
   environment.systemPackages = with pkgs; [
     gcc                       matcha-gtk-theme
-    python39Full              papirus-icon-theme
-    micropython               multimc
-    go                        minecraft
-    rustc                     steam-run
-    nodejs-16_x               osu-lazer
-    clang_12                  discord
+    gh                        papirus-icon-theme
+    multimc                   vlc
+    go                        chromium 
+    rustc                     gnome3.simple-scan
+    nodejs-16_x               discord
     neovim                    tdesktop
     vscodium                  zoom-us
     arduino                   libreoffice-fresh
@@ -42,16 +41,13 @@
     pulseeffects-pw           xorg.xrandr
     usbutils                  obs-studio
     clang-tools               fritzing
-    wineStaging               evince
-    chromium                  gnome3.simple-scan
+    wineStaging               evince                     
     pass                      element-desktop
     pavucontrol               openboard
-    nmap                      kdeconnect
-    elementary-planner        glxinfo              
-    gimp                      krita
+    nmap                      elementary-planner                     
+    gimp                      glxinfo 
     element-desktop           handbrake
-    system-config-printer     neofetch
-    gh                        vlc
+    system-config-printer     neofetch                        
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 
