@@ -48,6 +48,7 @@
     gimp                      glxinfo 
     element-desktop           handbrake
     system-config-printer     neofetch                        
+    osu-lazer
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin 

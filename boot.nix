@@ -13,6 +13,7 @@
 
   hardware = {
     cpu.intel.updateMicrocode = true;
+    opentabletdriver.enable = true;
     opengl = {
       driSupport = true;
       driSupport32Bit = true;
