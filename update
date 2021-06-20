@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPODIR=$HOME/dotfiles-nixos
+REPODIR=$HOME/nixos-config
 INPUT=$1
 
 if [ -n "$INPUT" ]; then
