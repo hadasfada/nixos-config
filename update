@@ -11,7 +11,7 @@ fi
 
 function update() {
 	rm -f *.nix
-	cp /etc/nixos/* ./
+	cp -a /etc/nixos/* ./
 	rm hardware-configuration.nix
 }
 
