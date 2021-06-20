@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./pipewire.nix
+      ./boot.nix
       ./pipewire.nix
       ./xserver.nix
       ./fonts.nix
