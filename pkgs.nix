@@ -6,11 +6,12 @@
       "rebuild" = "sudo nixos-rebuild switch";
       "upgrade" = "sudo nixos-rebuild --upgrade switch";
       "config-nixos" = "sudo nvim /etc/nixos/configuration.nix";
+      "config-repo" = "pushd ~/nixos-config";
       "config-pkgs" = "sudo nvim /etc/nixos/pkgs.nix";
       "config-boot" = "sudo nvim /etc/nixos/boot.nix";
       "config-services" = "sudo nvim /etc/nixos/services.nix";
-      "config-update" = "bash ~/dotfiles-nixos/update";
-      "config-install" = "sudo bash ~/dotfiles-nixos/install";
+      "config-update" = "bash ~/nixos-config/update";
+      "config-install" = "sudo bash ~/nixos-config/install";
       "ls" = "ls --color=tty";
     };
     nm-applet.enable = true;  
