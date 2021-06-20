@@ -9,16 +9,17 @@
 
 function installConfiguration {
 #	backup
-	cp *nix $INSTALL_PATH/
+	cp -a * $INSTALL_PATH/
+	rm $INSTALL_PATH/{LICENSE,README.md,install,update}
 }
 
-if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-configuration.nix" ]; then	
-    INSTALL_PATH=/mnt/etc/nixos
+if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-configuration.nix" ]; then
+	INSTALL_PATH=/mnt/etc/nixos
 	installConfiguration
 	# regenerate hardware-config
 	nixos-generate-config --root /mnt
 	nixos-install
-	echo "\n\n      Installation finished!"
+	echo "     Installation finished!"
 else
 	INSTALL_PATH=/etc/nixos
 	installConfiguration

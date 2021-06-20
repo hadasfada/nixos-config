@@ -14,26 +14,26 @@
       "config-install" = "sudo bash ~/nixos-config/install";
       "ls" = "ls --color=tty";
     };
-    nm-applet.enable = true;  
-    adb.enable = true;  
+    nm-applet.enable = true;
+    adb.enable = true;
     steam.enable = true;
     gamemode.enable = true;
     gnupg.agent.enable = true;
     gnupg.agent.pinentryFlavor = "curses";
   };
 
-# hardware acceleration  
+# hardware acceleration
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
-    
+
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.systemPackages = with pkgs; [
     gcc                       matcha-gtk-theme
     gh                        papirus-icon-theme
     multimc                   vlc
-    go                        chromium 
+    go                        chromium
     rustc                     gnome3.simple-scan
     nodejs-16_x               discord
     neovim                    tdesktop
@@ -43,19 +43,19 @@
     pulseeffects-pw           xorg.xrandr
     usbutils                  obs-studio
     clang-tools               fritzing
-    wineStaging               evince                     
+    wineStaging               evince
     pass                      element-desktop
     pavucontrol               openboard
-    nmap                      elementary-planner                     
-    gimp                      glxinfo 
+    nmap                      elementary-planner
+    gimp                      glxinfo
     element-desktop           handbrake
-    system-config-printer     neofetch                        
+    system-config-printer     neofetch
     osu-lazer
 
     # xfce stuff
-    xfce.xfce4-whiskermenu-plugin 
-    xfce.xfce4-pulseaudio-plugin   
-   
+    xfce.xfce4-whiskermenu-plugin
+    xfce.xfce4-pulseaudio-plugin
+
     # kodi plugins
     (kodi.passthru.withPackages (kodiPkgs: with kodiPkgs; [
       pvr-iptvsimple
