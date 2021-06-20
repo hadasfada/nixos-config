@@ -3,9 +3,9 @@
 {
   imports =
     [ 
-      ./boot.nix
-      ./pkgs.nix
-      ./services.nix
+      ./system/boot.nix
+      ./system/pkgs.nix
+      ./system/services.nix
       ./hardware-configuration.nix
     ];
   
