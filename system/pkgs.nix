@@ -9,7 +9,7 @@
       "config-repo" = "pushd ~/nixos-config";
       "config-pkgs" = "sudo nvim /etc/nixos/system/pkgs.nix";
       "config-boot" = "sudo nvim /etc/nixos/system/boot.nix";
-      "config-services" = "sudo nvim /etc/nixos/system/services.nix";
+      "config-system" = "sudo nvim /etc/nixos/system/";
       "config-update" = "bash ~/nixos-config/update";
       "config-install" = "sudo bash ~/nixos-config/install";
       "ls" = "ls --color=tty";
