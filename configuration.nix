@@ -3,7 +3,8 @@
 {
   imports =
     [
-      ./system/system.nix
+      ./system
+      ./environment
       ./hardware-configuration.nix
     ];
 
