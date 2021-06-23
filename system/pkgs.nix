@@ -12,6 +12,10 @@
       "config-system" = "sudo nvim /etc/nixos/system/";
       "config-update" = "bash ~/nixos-config/update";
       "config-install" = "sudo bash ~/nixos-config/install";
+      "config-apply" = ''
+        sudo bash ~/nixos-config/install
+        sudo nixos-rebuild switch
+        bash ~/nixos-config/update'';
       "ls" = "ls --color=tty";
     };
     nm-applet.enable = true;

@@ -3,6 +3,6 @@
 {
   imports =
     [
-      ./minecraft-server.nix
+      #./minecraft-server.nix
     ];
 }
