@@ -1,0 +1,40 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[*.{diff,patch}]
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+[*.{json,lock,md,nix,pl,pm,py,rb,sh,xml}]
+indent_style = space
+
+[*.xml]
+indent_size = 1
+
+[*.{json,lock,md,nix,rb}]
+indent_size = 2
+
+[*.{pl,pm,py,sh}]
+indent_size = 4
+
+[Gemfile]
+indent_size = 2
+indent_style = space
+
+[*.{c,h}]
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+[*.{asc,key,ovpn}]
+insert_final_newline = unset
+end_of_line = unset
+trim_trailing_whitespace = unset
+
+[*.lock]
+indent_size = unset
