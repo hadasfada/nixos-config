@@ -31,35 +31,34 @@
   environment.systemPackages = with pkgs; [
     gcc                       matcha-gtk-theme
     gh                        papirus-icon-theme
-    multimc                   vlc
-    go                        chromium
-    rustc                     gnome3.simple-scan
-    nodejs-16_x               discord
+    git                       multimc
+    usbutils                  vlc
+    nmap-unfree               chromium
+    glxinfo                   clang-tools
+    gnome3.simple-scan        handbrake
+    discord                   neofetch
     neovim                    tdesktop
     vscodium                  zoom-us
     arduino                   libreoffice-fresh
-    git                       gparted
+    gparted                   gimp
     pulseeffects-pw           xorg.xrandr
-    usbutils                  obs-studio
-    clang-tools               fritzing
+    obs-studio                openboard
+    fritzing                  pavucontrol
     wineStaging               evince
-    pass                      element-desktop
-    pavucontrol               openboard
-    nmap                      elementary-planner
-    gimp                      glxinfo
-    element-desktop           handbrake
-    system-config-printer     neofetch
-    osu-lazer                 libsForQt5.qtstyleplugins
+    osu-lazer                 element-desktop
+    system-config-printer
+
+    # plugins for theme QT apps on xfce properly
+    libsForQt5.qtstyleplugins
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin
     xfce.xfce4-pulseaudio-plugin
 
-    # kodi plugins
+    # kodi and extra plugins
     (kodi.passthru.withPackages (kodiPkgs: with kodiPkgs; [
       pvr-iptvsimple
     ]))
-
    ];
   system.stateVersion = "unstable";
 }
