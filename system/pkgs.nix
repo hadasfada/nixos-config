@@ -54,7 +54,7 @@
     gimp                      glxinfo
     element-desktop           handbrake
     system-config-printer     neofetch
-    osu-lazer
+    osu-lazer                 libsForQt5.qtstyleplugins
 
     # xfce stuff
     xfce.xfce4-whiskermenu-plugin

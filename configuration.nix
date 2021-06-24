@@ -26,6 +26,10 @@
 
   security.rtkit.enable = true;
 
+  environment.variables = {
+    QT_QPA_PLATFORMTHEME="gtk2";
+  };
+
   users = {
     #defaultUserShell = pkgs.zsh;
     users.musfay = {
