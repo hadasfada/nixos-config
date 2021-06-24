@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# DROPPED
+# I used to first edit my changes on /etc and copy them into my repo.
+# Now I'm making my changes in my repo first and applying those changes to my system
+# with install script.
+
 REPODIR=$HOME/nixos-config
 INPUT=$1
 

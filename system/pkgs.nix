@@ -5,17 +5,12 @@
     bash.shellAliases = {
       "rebuild" = "sudo nixos-rebuild switch";
       "upgrade" = "sudo nixos-rebuild --upgrade switch";
-      "config-nixos" = "sudo nvim /etc/nixos/configuration.nix";
       "config-repo" = "pushd ~/nixos-config";
-      "config-pkgs" = "sudo nvim /etc/nixos/system/pkgs.nix";
-      "config-boot" = "sudo nvim /etc/nixos/system/boot.nix";
-      "config-system" = "sudo nvim /etc/nixos/system/";
-      "config-update" = "bash ~/nixos-config/update";
-      "config-install" = "sudo bash ~/nixos-config/install";
+      "config-ide" = "codium ~/nixos-config";
       "config-apply" = ''
         sudo bash ~/nixos-config/install
         sudo nixos-rebuild switch
-        bash ~/nixos-config/update'';
+      '';
       "ls" = "ls --color=tty";
     };
     nm-applet.enable = true;
