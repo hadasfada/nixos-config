@@ -4,5 +4,6 @@
   imports =
     [
       #./minecraft-server.nix
+      ./home-manager.nix
     ];
 }

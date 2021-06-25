@@ -33,11 +33,11 @@
     papirus-icon-theme        system-config-printer
     multimc                   element-desktop
     usbutils                  vlc
-    nmap-unfree               evince
-    glxinfo                   clang-tools
+    evince                    glxinfo
+    clang-tools               chromium
     gnome3.simple-scan        handbrake
     discord                   neofetch
-    neovim                    tdesktop
+    tdesktop                  vscodium
     zoom-us                   osu-lazer
     arduino                   libreoffice-fresh
     gparted                   gimp
@@ -45,6 +45,7 @@
     obs-studio                openboard
     fritzing                  pavucontrol
     wineStaging
+
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
