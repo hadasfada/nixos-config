@@ -3,6 +3,7 @@
 {
   imports =
     [
+      <home-manager/nixos>
       ./system
       ./environment
       ./hardware-configuration.nix

@@ -30,23 +30,21 @@
 
   environment.systemPackages = with pkgs; [
     gcc                       matcha-gtk-theme
-    gh                        papirus-icon-theme
-    git                       multimc
+    papirus-icon-theme        system-config-printer
+    multimc                   element-desktop
     usbutils                  vlc
-    nmap-unfree               chromium
+    nmap-unfree               evince
     glxinfo                   clang-tools
     gnome3.simple-scan        handbrake
     discord                   neofetch
     neovim                    tdesktop
-    vscodium                  zoom-us
+    zoom-us                   osu-lazer
     arduino                   libreoffice-fresh
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr
     obs-studio                openboard
     fritzing                  pavucontrol
-    wineStaging               evince
-    osu-lazer                 element-desktop
-    system-config-printer
+    wineStaging
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
