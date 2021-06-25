@@ -14,7 +14,7 @@
           userName = "Mustafa Çalışkan";
           userEmail = "musfay@protonmail.com";
           extraConfig = {
-            credential.helper = "gh";
+            credential.helper = "/home/musfay/.nix-profile/bin/gh";
           };
         };
         neovim.enable = true;
