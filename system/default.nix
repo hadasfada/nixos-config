@@ -9,7 +9,6 @@
       ./fonts.nix
       ./hardware.nix
       ./pkgs.nix
-      ./home-manager.nix
     ];
 
   services = {
