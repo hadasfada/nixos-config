@@ -1,6 +1,5 @@
-{ config, pkgs, lib, libsForQt5,... }:
+{ config, pkgs, lib, libsForQt5, ... }:
 
 {
   tok = libsForQt5.callPackage ./tok { };
-
 }

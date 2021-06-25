@@ -14,7 +14,6 @@
       "ls" = "ls --color=tty";
     };
     nm-applet.enable = true;
-    adb.enable = true;
     steam.enable = true;
     gamemode.enable = true;
     gnupg.agent.enable = true;
@@ -29,23 +28,19 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    chromium                  wineStaging
-    gcc                       matcha-gtk-theme
+    chromium                  openboard
+    matcha-gtk-theme          vlc
     papirus-icon-theme        system-config-printer
     multimc                   element-desktop
-    usbutils                  vlc
-    evince                    glxinfo
+    evince                    pavucontrol
     clang-tools               chromium
     gnome3.simple-scan        handbrake
-    discord                   neofetch
+    discord                   fritzing
     tdesktop                  vscodium
     zoom-us                   osu-lazer
-    arduino                   libreoffice-fresh
+    libreoffice-fresh         obs-studio
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr
-    obs-studio                openboard
-    fritzing                  pavucontrol
-    gh
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
