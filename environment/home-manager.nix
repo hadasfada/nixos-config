@@ -14,7 +14,7 @@
           userName = "Mustafa Çalışkan";
           userEmail = "musfay@protonmail.com";
           extraConfig = {
-            credential.helper = "${pkgs.gh}/bin/gh";
+            credential.helper = "!${pkgs.gh}/bin/gh auth git-credential";
           };
         };
         neovim.enable = true;
