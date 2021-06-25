@@ -14,11 +14,10 @@
           userName = "Mustafa Çalışkan";
           userEmail = "musfay@protonmail.com";
           extraConfig = {
-            credential.helper = "/home/musfay/.nix-profile/bin/gh";
+            credential.helper = "/run/current-system/sw/bin/gh";
           };
         };
         neovim.enable = true;
-        gh.enable = true;
       };
     };
   };

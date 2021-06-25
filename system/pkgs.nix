@@ -45,6 +45,7 @@
     pulseeffects-pw           xorg.xrandr
     obs-studio                openboard
     fritzing                  pavucontrol
+    gh
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
