@@ -29,6 +29,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    chromium                  wineStaging
     gcc                       matcha-gtk-theme
     papirus-icon-theme        system-config-printer
     multimc                   element-desktop
@@ -44,8 +45,6 @@
     pulseeffects-pw           xorg.xrandr
     obs-studio                openboard
     fritzing                  pavucontrol
-    wineStaging
-
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
