@@ -14,7 +14,7 @@
           userName = "Mustafa Çalışkan";
           userEmail = "musfay@protonmail.com";
           extraConfig = {
-            credential.helper = "/run/current-system/sw/bin/gh";
+            credential.helper = "${pkgs.gh}/bin/gh";
           };
         };
         neovim.enable = true;
