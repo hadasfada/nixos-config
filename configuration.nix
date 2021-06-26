@@ -3,11 +3,12 @@
 {
   imports =
     [
-      <home-manager/nixos>
       ./system
       ./environment
       ./hardware-configuration.nix
     ];
+
+  #nixpkgs.overlays = [ ./overlay ];
 
   networking = {
     hostName = "nixos";

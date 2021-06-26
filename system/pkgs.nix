@@ -41,6 +41,7 @@
     libreoffice-fresh         obs-studio
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr
+    okular                    mangohud
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins

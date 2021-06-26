@@ -16,9 +16,12 @@
         nmap-unfree
         home-manager
         gh
+        python3
         neofetch
         usbutils
         gcc
+        qdl
+        bootiso
         wineStaging
         android-tools
       ];
