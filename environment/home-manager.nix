@@ -17,9 +17,12 @@
         home-manager
         gh
         python3
+        nodejs-16_x
         neofetch
         usbutils
+        pciutils
         gcc
+        pkgsCross.avr.buildPackages.gcc
         qdl
         bootiso
         wineStaging

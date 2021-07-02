@@ -20,6 +20,10 @@ if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-config
 	installConfiguration
 	# regenerate hardware-config
 	nixos-generate-config --root /mnt
+	# add home-manager channel
+	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+	nix-channel --update
+	# install
 	nixos-install
 	echo "     Installation finished!"
 else

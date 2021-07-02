@@ -42,6 +42,7 @@
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr
     okular                    mangohud
+    lightlocker
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
