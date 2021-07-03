@@ -6,7 +6,7 @@
 
     useGlobalPkgs = true;
 
-    users.milhan46 = { pkgs, ... }: {
+    users.my4664 = { pkgs, ... }: {
       home.packages = with pkgs; [
         ngrok
         nmap-unfree

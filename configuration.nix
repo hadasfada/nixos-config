@@ -11,7 +11,7 @@
   #nixpkgs.overlays = [ ./overlay ];
 
   networking = {
-    hostName = "nixos";
+    hostName = "deknopisi";
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.enp1s0.useDHCP = true;
@@ -34,7 +34,7 @@
 
   users = {
     #defaultUserShell = pkgs.zsh;
-    users.milhan46 = {
+    users.my4664 = {
       initialPassword = "12345";
       isNormalUser = true;
       extraGroups = [ "wheel" "adbusers" "networkmanager" ];
