@@ -6,11 +6,7 @@
 
     useGlobalPkgs = true;
 
-    users.musfay = { pkgs, ... }: {
-      imports = [
-        ./gitAndTools.nix
-      ];
-
+    users.milhan46 = { pkgs, ... }: {
       home.packages = with pkgs; [
         ngrok
         nmap-unfree
@@ -22,13 +18,11 @@
         usbutils
         pciutils
         gcc
-        pkgsCross.avr.buildPackages.gcc
         qdl
         bootiso
         wineStaging
         android-tools
       ];
-
       programs = {
         neovim.enable = true;
       };

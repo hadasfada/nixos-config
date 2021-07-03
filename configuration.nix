@@ -34,7 +34,8 @@
 
   users = {
     #defaultUserShell = pkgs.zsh;
-    users.musfay = {
+    users.milhan46 = {
+      initialPassword = "12345";
       isNormalUser = true;
       extraGroups = [ "wheel" "adbusers" "networkmanager" ];
     };

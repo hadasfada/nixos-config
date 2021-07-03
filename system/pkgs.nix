@@ -32,7 +32,7 @@
     matcha-gtk-theme          vlc
     papirus-icon-theme        system-config-printer
     multimc                   element-desktop
-    evince                    pavucontrol
+    lightlocker               pavucontrol
     clang-tools               chromium
     gnome3.simple-scan        handbrake
     discord                   fritzing
@@ -42,7 +42,6 @@
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr
     okular                    mangohud
-    lightlocker
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
