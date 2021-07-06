@@ -33,7 +33,7 @@
   };
 
   users = {
-    #defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.bash_5;
     users.musfay = {
       isNormalUser = true;
       extraGroups = [ "wheel" "adbusers" "networkmanager" ];

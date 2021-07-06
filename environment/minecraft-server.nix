@@ -1,17 +1,21 @@
-{ config, pkgs, lib, ... }:
+{ pkgs ? import <nixpkgs> }:
 
-{
-  services.minecraft-server = {
-    enable = true;
-    declarative = true;
-    eula = true;
-    package = pkgs.papermc;
-    serverProperties = {
-      server-port = 25565;
-      difficulty = 3;
-      max-players = 5;
-      motd = "Helal";
-    };
-  };
-
+pkgs.mkShell {
+  nativeBuildInputs = with pkgs; [ papermc ngrok curl ];
+  shellHook = ''
+    pushd $HOME/workspace/minecraft-server
+    PORT=25565
+    IP=""
+    ngrok tcp --region eu $PORT &>/dev/null &
+    while [ -z "$IP" ]; do
+      export IP=$(curl --silent --max-time 10 --connect-timeout 5 \
+        http://127.0.0.1:4040/api/tunnels | \
+        sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p')
+    done
+    echo "IP = $IP"
+    minecraft-server
+    popd
+    exit
+  '';
 }
+

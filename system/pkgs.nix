@@ -5,9 +5,10 @@
     bash.shellAliases = {
       "rebuild" = "sudo nixos-rebuild switch";
       "upgrade" = "sudo nixos-rebuild --upgrade switch";
-      "config-repo" = "pushd ~/nixos-config";
-      "config-ide" = "codium ~/nixos-config";
-      "config-apply" = ''
+      "configRepo" = "pushd ~/nixos-config";
+      "openRepo" = "codium ~/nixos-config";
+      "runMinecraftServer" = "nix-shell /etc/nixos/environment/minecraft-server.nix";
+      "applyConfig" = ''
         sudo bash ~/nixos-config/install
         sudo nixos-rebuild switch
       '';

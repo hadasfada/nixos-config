@@ -21,8 +21,9 @@
         neofetch
         usbutils
         pciutils
-        gcc
+        llvmPackages_latest.clang
         pkgsCross.avr.buildPackages.gcc
+        nixos-shell
         qdl
         bootiso
         wineStaging
