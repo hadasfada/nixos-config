@@ -14,7 +14,7 @@ function installConfiguration {
 	rm $INSTALL_PATH/{LICENSE,README.md,install,update}
 }
 
-pushd /home/musfay/nixos-config
+pushd /home/my4664/nixos-config
 if [ -f "/mnt/etc/nixos/configuration.nix" -a -f "/mnt/etc/nixos/hardware-configuration.nix" ]; then
 	INSTALL_PATH=/mnt/etc/nixos
 	installConfiguration
