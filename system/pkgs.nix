@@ -36,8 +36,8 @@
     clang-tools               chromium
     gnome3.simple-scan        handbrake
     discord                   fritzing
-    tdesktop                  vscodium
-    zoom-us                   osu-lazer
+    tdesktop
+    zoom-us
     libreoffice-fresh         obs-studio
     gparted                   gimp
     pulseeffects-pw           xorg.xrandr

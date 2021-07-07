@@ -11,6 +11,7 @@
         ngrok
         nmap-unfree
         home-manager
+        git
         gh
         python3
         nodejs-16_x
@@ -18,7 +19,6 @@
         usbutils
         pciutils
         gcc
-        qdl
         bootiso
         wineStaging
         android-tools
