@@ -11,7 +11,7 @@ function installConfiguration {
 #	backup
 	rm -rf $INSTALL_PATH/*
 	cp -a * $INSTALL_PATH/
-	rm $INSTALL_PATH/{LICENSE,README.md,install,update}
+	rm $INSTALL_PATH/{LICENSE,README.md,install}
 }
 
 pushd /home/my4664/nixos-config
