@@ -14,8 +14,8 @@
     hostName = "deknopisi";
     networkmanager.enable = true;
     useDHCP = false;
-    interfaces.enp1s0.useDHCP = true;
-    interfaces.wlp2s0.useDHCP = true;
+    interfaces.enp0s20u7u1.useDHCP = true;
+    interfaces.wlp1s0.useDHCP = true;
   };
 
   time.timeZone = "Europe/Istanbul";
