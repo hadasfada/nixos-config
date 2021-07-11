@@ -24,8 +24,9 @@ applyConfig() {
 	    sudo nixos-install
     else
 	    installDir=/etc/nixos
-	    installConfiguration
+	    installConfig
 	    # regenerate hardware-config
-	    nixos-generate-config --root /
+	    sudo nixos-generate-config --root /
+        sudo nixos-rebuild switch
     fi
 }
