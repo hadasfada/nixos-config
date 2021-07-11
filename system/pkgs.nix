@@ -22,7 +22,7 @@
     papirus-icon-theme        system-config-printer
     multimc                   element-desktop
     evince                    pavucontrol
-    clang-tools               chromium
+    clang-tools               sx
     gnome3.simple-scan        handbrake
     discord                   fritzing
     tdesktop                  vscodium
