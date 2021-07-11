@@ -12,14 +12,12 @@
         ngrok
         nmap-unfree
         home-manager
-        gh
         python3
         nodejs-16_x
         neofetch
         usbutils
         pciutils
         llvmPackages_latest.clang
-        nixos-shell
         qdl
         bootiso
         wineStaging
