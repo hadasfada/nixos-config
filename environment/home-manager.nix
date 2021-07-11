@@ -7,6 +7,7 @@
     users.musfay = { pkgs, ... }: {
       imports = [
         ./gitAndTools.nix
+        ./bash.nix
       ];
       home.packages = with pkgs; [
         ngrok
