@@ -3,14 +3,11 @@
 {
   imports = [ <home-manager/nixos> ];
   home-manager = {
-
     useGlobalPkgs = true;
-
     users.musfay = { pkgs, ... }: {
       imports = [
         ./gitAndTools.nix
       ];
-
       home.packages = with pkgs; [
         ngrok
         nmap-unfree
@@ -22,14 +19,12 @@
         usbutils
         pciutils
         llvmPackages_latest.clang
-        pkgsCross.avr.buildPackages.gcc
         nixos-shell
         qdl
         bootiso
         wineStaging
         android-tools
       ];
-
       programs = {
         neovim.enable = true;
       };
