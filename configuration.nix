@@ -4,6 +4,7 @@
   imports =
     [
       ./system
+      ./overlay
       ./environment
       ./hardware-configuration.nix
     ];
