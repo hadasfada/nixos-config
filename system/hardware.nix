@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-hardware = {
+  hardware = {
     cpu.intel.updateMicrocode = true;
     opengl = {
       driSupport = true;
