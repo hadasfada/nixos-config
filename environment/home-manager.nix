@@ -27,7 +27,6 @@
 
       programs = {
         neovim.enable = true;
-        gpg.enable = true;
       };
 
     };
