@@ -2,18 +2,6 @@
 
 {
   programs = {
-    bash.shellAliases = {
-      "rebuild" = "sudo nixos-rebuild switch";
-      "upgrade" = "sudo nixos-rebuild --upgrade switch";
-      "configRepo" = "pushd ~/nixos-config";
-      "openRepo" = "codium ~/nixos-config";
-      "runMinecraftServer" = "nix-shell /etc/nixos/environment/minecraft-server.nix";
-      "applyConfig" = ''
-        sudo bash ~/nixos-config/install
-        sudo nixos-rebuild switch
-      '';
-      "ls" = "ls --color=tty";
-    };
     nm-applet.enable = true;
     steam.enable = true;
     gamemode.enable = true;
