@@ -5,6 +5,7 @@
     nm-applet.enable = true;
     steam.enable = true;
     gamemode.enable = true;
+    gnupg.agent.enable = true;
   };
 
 # hardware acceleration
