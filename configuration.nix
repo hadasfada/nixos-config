@@ -1,15 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./system
       ./overlay
       ./environment
       ./hardware-configuration.nix
-    ];
-
-  #nixpkgs.overlays = [ ./overlay ];
+  ];
 
   networking = {
     hostName = "nixos";
