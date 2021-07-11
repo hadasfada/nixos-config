@@ -2,7 +2,7 @@
 
 {
 fonts = {
-  fonts = with pkgs; [ noto-fonts source-code-pro ];
+  fonts = with pkgs; [ noto-fonts source-code-pro open-sans ];
     fontconfig = {
       localConf = ''
 <?xml version='1.0'?>
