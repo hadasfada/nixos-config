@@ -24,9 +24,12 @@
         wineStaging
         android-tools
       ];
+
       programs = {
         neovim.enable = true;
+        gpg.enable = true;
       };
+
     };
   };
 }
