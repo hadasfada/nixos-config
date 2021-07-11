@@ -31,19 +31,26 @@ mkDerivation rec {
     domain = "invent.kde.org";
     owner = "network";
     repo = pname;
-    rev = "11eb8761f1f36ac74f622329298043bba4a980a2";
-    sha256 = "0zwmv6gcnnwaknip2ihd0bixvrh9pjc81clc2ilxsf0d2m7q64x7";
+    rev = "1c3b891458cffb2c9fa743916cc4b4a9ca9548d9";
+    sha256 = "sha256-G5xuWa1TY6dRikIU0WAONYSGbAhKR0WMnAr84pn1OQE=";
   };
 
-  buildInputs = [ full kirigami2 knotifications kconfigwidgets kitemmodels kwindowsystem ki18n zlib rlottie tdlib ];
-  nativeBuildInputs = [ qbs cmake pkg-config qttools jq wrapGAppsHook wrapQtAppsHook ];
+  buildInputs = [
+    full kirigami2
+    knotifications kconfigwidgets kitemmodels
+    kwindowsystem ki18n zlib rlottie tdlib
+  ];
+
+  nativeBuildInputs = [
+    qbs cmake pkg-config qttools jq
+    wrapGAppsHook wrapQtAppsHook
+  ];
 
   patchPhase = ''
     patchShebangs src/
   '';
 
   configurePhase = ''
-    makeCmakeFindLibs
     qbs resolve qbs.installPrefix:$out
   '';
 
@@ -55,12 +62,6 @@ mkDerivation rec {
     runHook preInstall
     qbs install --install-root /
     runHook postInstall
-  '';
-
-  postFixup = ''
-    wrapProgram $out/bin/org.kde.Tok \
-      "''${gappsWrapperArgs[@]}" \
-      "''${qtWrapperArgs[@]}"
   '';
 
   #meta = with lib; {
