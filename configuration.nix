@@ -16,6 +16,13 @@
     interfaces.wlp2s0.useDHCP = true;
   };
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+   };
+
   time.timeZone = "Europe/Istanbul";
   i18n.defaultLocale = "tr_TR.UTF-8";
 
