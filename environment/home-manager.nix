@@ -10,25 +10,19 @@
         ./bash.nix
       ];
       home.packages = with pkgs; [
-        ngrok
-        nmap-unfree
-        home-manager
-        python3
-        nodejs-16_x
-        neofetch
-        usbutils
-        pciutils
-        llvmPackages_latest.clang
-        qdl
-        bootiso
-        wineStaging
-        android-tools
+        ngrok                      android-tools
+        nmap-unfree                qdl
+        home-manager               bootiso
+        python3                    usbutils
+        nodejs-16_x                neofetch
+        llvmPackages_latest.clang  pciutils
+        rustc                      cargo
+        go
       ];
 
       programs = {
         neovim.enable = true;
       };
-
     };
   };
 }
