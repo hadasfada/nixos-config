@@ -2,14 +2,19 @@
 
 {
   nixpkgs.overlays = [ (self: super:
+    with super;
     {
       #tok = super.libsForQt5.callPackage ./tok { };
-      mkbootimg = super.callPackage ./mkbootimg {};
-      sx = super.callPackage ./sx {
-        inherit (super.xorg) xauth xorgserver;
+      mkbootimg = callPackage ./mkbootimg {};
+      sx = callPackage ./sx {
+        inherit (xorg) xauth xorgserver;
       };
-      cubocore = super.callPackage ./cubocore { };
-      libarchive-qt = super.libsForQt5.callPackage ./libarchive-qt { };
+      cubocore = recurseIntoAttrs (import ./cubocore {
+        inherit pkgs;
+        inherit (lib) makeScope;
+        inherit libsForQt5;
+      });
+      libarchive-qt = libsForQt5.callPackage ./libarchive-qt { };
     }
   )];
 }

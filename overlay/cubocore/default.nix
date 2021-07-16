@@ -9,7 +9,9 @@ let
     ### coreapps
     coreaction = callPackage ./coreaction { };
     corearchiver = callPackage ./corearchiver { };
-    corefm = callPackage ./corefm { };
+    corefm = callPackage ./corefm {
+      stdenv = llvmPackages_latest.stdenv;
+    };
     coregarage = callPackagae ./coregarage { };
     corehunt = callPackage ./corehunt { };
     coreimage = callPackage ./coreimage { };

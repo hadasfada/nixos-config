@@ -1,6 +1,8 @@
 { mkDerivation
 , lib
 , fetchFromGitLab
+, wrapQtAppsHook
+, mold
 , cmake
 , qtbase
 , libcsys
@@ -15,12 +17,12 @@ mkDerivation rec {
     owner = "cubocore/coreapps";
     repo = pname;
     rev = "v${version}";
-    sha256 = "167gzn6aqk7skzbmrnm7nmcpkl0nshr8axbfgwnw552dnk6v8gna";
+    sha256 = "sha256-PczKIKY9uCD+cAzAC6Gkb+g+cn9KKCQYd3epoZK8bvA=";
   };
 
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake wrapQtAppsHook ];
   buildInputs = [ qtbase libcsys libcprime ];
-
+  EXTRA_LDFLAGS = "-fuse-ld=${mold}/bin/mold";
   meta = with lib; {
     homepage = "https://cubocore.org";
     description = "A file manager for C Suite";
