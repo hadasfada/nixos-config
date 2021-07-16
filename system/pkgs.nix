@@ -3,12 +3,11 @@
 {
   programs = {
     nm-applet.enable = true;
-    steam.enable = true;
     gamemode.enable = true;
     gnupg.agent.enable = true;
   };
 
-# hardware acceleration
+  # hardware acceleration
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
@@ -19,18 +18,14 @@
     chromium                  openboard
     matcha-gtk-theme          vlc
     papirus-icon-theme        system-config-printer
-    multimc                   element-desktop
-    evince                    pavucontrol
-    clang-tools               sx
-    gnome3.simple-scan        handbrake
+    element-desktop           xorg.xrandr
+    pavucontrol               okular
+    clang-tools               lightlocker
+    gnome.simple-scan         handbrake
     discord                   fritzing
     tdesktop                  vscodium
-    zoom-us                   osu-lazer
     libreoffice-fresh         obs-studio
-    gparted                   gimp
-    pulseeffects-pw           xorg.xrandr
-    okular                    mangohud
-    lightlocker               mkbootimg
+    gimp
 
     # plugins for theme QT apps on xfce properly
     libsForQt5.qtstyleplugins
