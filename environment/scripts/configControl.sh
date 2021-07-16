@@ -1,11 +1,11 @@
 # If we run script with "sudo", $HOME will change to /root
 
 installConfig() {
-    pushd $repo
+    pushd $repo &>/dev/null
     sudo rm -rf $installDir/*
 	sudo cp -a * $installDir/
 	sudo rm $installDir/{LICENSE,README.md}
-    popd
+    popd &>/dev/null
 }
 
 applyConfig() {
