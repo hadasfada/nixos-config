@@ -15,6 +15,7 @@
         inherit libsForQt5;
       });
       libarchive-qt = libsForQt5.callPackage ./libarchive-qt { };
+      xmake = callPackage ./xmake { };
     }
   )];
 }

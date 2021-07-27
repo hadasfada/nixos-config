@@ -15,7 +15,7 @@ mkDerivation rec {
     owner = "cubocore/coreapps";
     repo = pname;
     rev = "v${version}";
-    sha256 = "167gzaaqk7skabmaaaanmcpkl0nshr8axbfgaaa552dnk6v8gna";
+    sha256 = "f848149ddf54156e6876ff770f352623031cbbeebd1d6d9aa72bc042f2d65fcc";
   };
 
   nativeBuildInputs = [ cmake ];

@@ -3,8 +3,8 @@
 {
   programs = {
     nm-applet.enable = true;
-    gamemode.enable = true;
     gnupg.agent.enable = true;
+    steam.enable = true;
   };
 
   # hardware acceleration
@@ -16,6 +16,7 @@
 
   environment.systemPackages = with pkgs; [
     chromium                  openboard
+    firefox                   emacs
     matcha-gtk-theme          vlc
     papirus-icon-theme        system-config-printer
     element-desktop           xorg.xrandr
@@ -24,7 +25,6 @@
     gnome.simple-scan         handbrake
     discord                   fritzing
     tdesktop                  vscodium
-    libreoffice-fresh         obs-studio
     gimp
 
     # plugins for theme QT apps on xfce properly

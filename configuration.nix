@@ -16,8 +16,7 @@
     interfaces.wlp2s0.useDHCP = true;
   };
 
-  nix = {
-    package = pkgs.nixUnstable;
+   package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -38,7 +37,6 @@
   };
 
   users = {
-    defaultUserShell = pkgs.bash_5;
     users.musfay = {
       isNormalUser = true;
       extraGroups = [ "wheel" "adbusers" "networkmanager" ];
