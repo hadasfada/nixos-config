@@ -8,25 +8,33 @@ installConfig() {
     popd &>/dev/null
 }
 
+runNix() {
+    if [ $2 = "clean" ]; then
+        sudo $1 &>/dev/null
+    else
+        sudo $1
+    fi
+}
+
 applyConfig() {
     repo=$HOME/.nixos-config
     installDir=/mnt/etc/nixos
     if [ -f "$installDir/configuration.nix" -a -f "$installDir/hardware-configuration.nix" ]; then
 	    installConfig
 	    # regenerate hardware-config
-	    sudo nixos-generate-config --root /mnt
+	    runNix "nixos-generate-config --root /mnt" clean
 	    # add home-manager channel
-	    sudo nix-channel --add \
+	    runNix "nix-channel --add \
             https://github.com/nix-community/home-manager/archive/master.tar.gz \
-            home-manager
-	    sudo nix-channel --update
+            home-manager" clean
+	    runNix "nix-channel --update" clean
 	    # install NixOS
-	    sudo nixos-install
+	    runNix "nixos-install"
     else
 	    installDir=/etc/nixos
 	    installConfig
 	    # regenerate hardware-config
-	    sudo nixos-generate-config --root /
-        sudo nixos-rebuild switch
+	    runNix "nixos-generate-config --root /" clean
+        runNix "nixos-rebuild switch"
     fi
 }
