@@ -16,7 +16,8 @@
     interfaces.wlp2s0.useDHCP = true;
   };
 
-   package = pkgs.nixUnstable;
+  nix = {
+    package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
