@@ -28,6 +28,11 @@
           vim-airline editorconfig-vim jedi-vim
         ];
       };
+
+      programs.alacritty = {
+        enable = true;
+        settings.background_opacity = 0.8;
+      };
     };
   };
 }
