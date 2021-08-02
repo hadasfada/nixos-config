@@ -8,6 +8,7 @@
       imports = [
         ./gitAndTools.nix
         ./bash.nix
+        ./zsh.nix
       ];
       home.packages = with pkgs; [
         ngrok                      android-tools
@@ -18,6 +19,7 @@
         llvmPackages_latest.clang  pciutils
         rustc                      cargo
         go                         gh
+        any-nix-shell
       ];
 
       programs.vim = {
