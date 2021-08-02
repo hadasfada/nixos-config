@@ -17,11 +17,14 @@
         nodejs-16_x                neofetch
         llvmPackages_latest.clang  pciutils
         rustc                      cargo
-        go
+        go                         gh
       ];
 
-      programs = {
-        neovim.enable = true;
+      programs.vim = {
+        enable = true;
+        plugins = with pkgs.vimPlugins; [
+          vim-airline editorconfig-vim jedi-vim
+        ];
       };
     };
   };
