@@ -16,6 +16,15 @@
       });
       libarchive-qt = libsForQt5.callPackage ./libarchive-qt { };
       xmake = callPackage ./xmake { };
+      
+      vim = vim.overrideAttrs (old: {
+        src = fetchFromGitHub {
+          owner = "vim";
+          repo = "vim";
+	  rev = "v8.2.3279";
+	  sha256 = "sha256-xyY8P4iRpA5UFXJgIoeD1Bsk2g8zaXzfPAGcFhQAPpc=";
+	};
+      });
     }
   )];
 }
