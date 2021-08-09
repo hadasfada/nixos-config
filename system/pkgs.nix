@@ -5,6 +5,7 @@
     nm-applet.enable = true;
     gnupg.agent.enable = true;
     steam.enable = true;
+    adb.enable = true;
   };
 
   # hardware acceleration
