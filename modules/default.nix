@@ -1,9 +1,8 @@
-{ config, pkgs, lib, ... }:
-
 {
-  imports =
-    [
-      #./minecraft-server.nix
-      ./home-manager.nix
-    ];
+  imports = [ <home-manager/nixos> ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    users.musfay = import ./home.nix;
+  };
 }

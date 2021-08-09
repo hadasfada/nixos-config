@@ -9,7 +9,7 @@ installConfig() {
 }
 
 runNix() {
-    if [ $2 = "clean" ]; then
+    if [ "$2" = "clean" ]; then
         sudo $1 &>/dev/null
     else
         sudo $1
