@@ -11,7 +11,7 @@
         ./zsh.nix
       ];
       home.packages = with pkgs; [
-        ngrok                      android-tools
+        ngrok
         nmap-unfree                qdl
         home-manager               bootiso
         python3                    usbutils
@@ -19,7 +19,7 @@
         llvmPackages_latest.clang  pciutils
         rustc                      cargo
         go                         gh
-        any-nix-shell
+        any-nix-shell              deno
       ];
 
       programs.vim = {
