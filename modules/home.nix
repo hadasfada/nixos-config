@@ -4,10 +4,11 @@
     ./gitAndTools.nix
     ./bash.nix
     ./zsh.nix
+    ./i3.nix
   ];
 
   home.packages = with pkgs; [
-    ngrok
+    ngrok                      android-tools
     nmap-unfree                qdl
     home-manager               bootiso
     python3                    usbutils
@@ -15,10 +16,10 @@
     llvmPackages_latest.clang  pciutils
     rustc                      cargo
     go                         gh
-    any-nix-shell              deno
+    any-nix-shell
   ];
 
-  programs.vim = {
+  programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       vim-airline editorconfig-vim jedi-vim

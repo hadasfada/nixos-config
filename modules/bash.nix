@@ -4,7 +4,6 @@
     shellAliases = {
       "rebuild" = "sudo nixos-rebuild switch";
       "upgrade" = "sudo nixos-rebuild --upgrade switch";
-      "configRepo" = "pushd $CONFIG_PATH";
       "ls" = "ls --color=tty";
     };
     bashrcExtra = ''
