@@ -5,6 +5,7 @@ let mod = "Mod1"; in
 {
   xsession.windowManager.i3 = {
     enable = true;
+    package = pkgs.i3-gaps;
     config = {
       modifier = mod;
 
@@ -15,11 +16,23 @@ let mod = "Mod1"; in
       };
 
       bars = [
-        {
-          position = "top";
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3status-rust.toml}";
-        }
+        { position = "top"; }
       ];
     };
+
+    extraConfig = ''
+      default_border pixel 1
+      default_floating_border pixel 1
+
+      gaps inner 10
+      gaps outer 10
+
+      exec --no-startup-id "${pkgs.feh}/bin/feh --bg-fill /etc/nixos/wallpaper.png"
+      exec chromium
+    '';
+  };
+
+  programs.i3status = {
+    enable = true;
   };
 }

@@ -3,7 +3,6 @@
   imports = [
     ./gitAndTools.nix
     ./bash.nix
-    ./zsh.nix
     ./i3.nix
   ];
 
@@ -16,10 +15,12 @@
     llvmPackages_latest.clang  pciutils
     rustc                      cargo
     go                         gh
-    any-nix-shell
+    any-nix-shell              feh
+    picom                      taskwarrior
+    multimc
   ];
 
-  programs.neovim = {
+  programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       vim-airline editorconfig-vim jedi-vim
