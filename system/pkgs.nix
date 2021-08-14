@@ -5,7 +5,6 @@
     nm-applet.enable = true;
     gnupg.agent.enable = true;
     gnupg.agent.pinentryFlavor = "curses";
-    steam.enable = true;
     adb.enable = true;
   };
 
