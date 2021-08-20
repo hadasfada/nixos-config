@@ -41,7 +41,6 @@
     users.musfay = {
       isNormalUser = true;
       extraGroups = [ "wheel" "adbusers" "networkmanager" ];
-      shell = pkgs.zsh;
     };
   };
 }
