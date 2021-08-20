@@ -1,3 +1,2 @@
-# dotfiles-nixos
+# nixos-config
 
-  Installation ./install
