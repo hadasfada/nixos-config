@@ -1,6 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }: {
 
-{
   programs = {
     nm-applet.enable = true;
     gnupg.agent.enable = true;
@@ -39,6 +38,8 @@
     (kodi.passthru.withPackages (kodiPkgs: with kodiPkgs; [
       pvr-iptvsimple
     ]))
-   ];
+  ];
+
   system.stateVersion = "unstable";
+
 }

@@ -1,6 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, ... }: {
 
-{
   imports = [
     ./boot.nix
     ./pipewire.nix
@@ -15,8 +14,10 @@
       enable = true;
       drivers = [ pkgs.gutenprint ];
     };
+
     flatpak.enable = true;
     blueman.enable = true;
+
   };
 
   xdg.portal.enable = true;

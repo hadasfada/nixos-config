@@ -1,6 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }: {
 
-{
   hardware = {
     cpu.intel.updateMicrocode = true;
     opengl = {
@@ -14,6 +13,7 @@
         libvdpau-va-gl
       ];
     };
+
     bluetooth = {
       enable = true;
       settings = {
