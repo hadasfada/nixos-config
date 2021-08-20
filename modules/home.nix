@@ -17,7 +17,8 @@
     go                         gh
     any-nix-shell              feh
     picom                      taskwarrior
-    multimc
+    multimc                    ghc
+    fd                         ripgrep
   ];
 
   programs.vim = {
