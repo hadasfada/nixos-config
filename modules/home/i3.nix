@@ -27,7 +27,7 @@ let mod = "Mod1"; in
       gaps inner 10
       gaps outer 10
 
-      exec --no-startup-id "${pkgs.feh}/bin/feh --bg-fill /etc/nixos/wallpaper.png"
+      exec --no-startup-id "${pkgs.feh}/bin/feh --bg-fill /etc/nixos/modules/wallpaper.png"
       exec chromium
     '';
   };
