@@ -1,10 +1,10 @@
 { pkgs, ... }: {
 
   programs = {
-    nm-applet.enable = true;
     gnupg.agent.enable = true;
     gnupg.agent.pinentryFlavor = "curses";
     adb.enable = true;
+    steam.enable = true;
   };
 
   # hardware acceleration
@@ -24,20 +24,10 @@
     clang-tools               lightlocker
     gnome.simple-scan         handbrake
     discord                   fritzing
-    tdesktop                  vscodium
-    gimp
-
-    # plugins for theme QT apps on xfce properly
-    libsForQt5.qtstyleplugins
-
-    # xfce stuff
-    xfce.xfce4-whiskermenu-plugin
-    xfce.xfce4-pulseaudio-plugin
-
-    # kodi and extra plugins
-    (kodi.passthru.withPackages (kodiPkgs: with kodiPkgs; [
-      pvr-iptvsimple
-    ]))
+    tdesktop                  gimp
+    libreoffice-fresh         plasma-browser-integration
+    materia-kde-theme         mangohud
+    wineStaging               xfce.xfce4-whiskermenu-plugin
   ];
 
   system.stateVersion = "unstable";

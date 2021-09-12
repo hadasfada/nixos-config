@@ -21,8 +21,11 @@
     fd                         ripgrep
   ];
 
-  programs.vim = {
+  programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       vim-airline editorconfig-vim jedi-vim
     ];

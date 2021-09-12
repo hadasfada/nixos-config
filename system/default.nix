@@ -14,10 +14,6 @@
       enable = true;
       drivers = [ pkgs.gutenprint ];
     };
-
-    flatpak.enable = true;
-    blueman.enable = true;
-
   };
 
   xdg.portal.enable = true;

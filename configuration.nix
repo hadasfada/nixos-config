@@ -3,7 +3,6 @@
 {
   imports = [
       ./system
-      ./overlay
       ./modules
       ./hardware-configuration.nix
   ];
