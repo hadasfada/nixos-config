@@ -35,12 +35,12 @@
   services = {
     xserver = {
       enable = true;
-      layout = "tr";
+      layout = "us";
     
       wacom.enable = true;
       libinput.enable = true;
 
-      displayManager.lightgdm.enable = true;
+      displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
 
