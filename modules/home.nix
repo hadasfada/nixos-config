@@ -1,24 +1,17 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    ngrok                      android-tools
-    nmap                       qdl
-    home-manager               bootiso
+    ngrok                      android-tools                       
+    home-manager
     python3                    usbutils
     nodejs-16_x                neofetch
     llvmPackages_latest.clang  pciutils
-    rustc                      cargo
-    go                         gh
-    picom                      fd
-    ghc                        ripgrep
   ];
 
   programs.git = {
     enable = true;
-    userName = "Mustafa Çalışkan";
-    userEmail = "musfay@protonmail.com";
-    signing.signByDefault = true;
-    signing.key = null;
+    userName = "Efe Altınkaynak";
+    userEmail = "altinkaynakefe@gmail.com";
     extraConfig = {
       credential.helper = "!${pkgs.gh}/bin/gh auth git-credential";
     };
