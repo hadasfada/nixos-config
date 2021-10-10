@@ -18,7 +18,7 @@
       
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
-          home-manager.users.musfay = import ./modules/home.nix;
+          home-manager.users.hadasfada = import ./modules/home.nix;
         }
       ];
     };
