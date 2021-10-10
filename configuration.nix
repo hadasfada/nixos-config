@@ -71,8 +71,6 @@
 
     
       };
-    };
-  };
 
   time.timeZone = "Europe/Istanbul";
   i18n.defaultLocale = "us.UTF-8";
